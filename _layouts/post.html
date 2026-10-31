@@ -1,0 +1,14 @@
+---
+layout: default
+---
+<article class="post">
+  <p class="eyebrow"><time>{{ page.date | date: "%B %-d, %Y" }}</time>
+    {% if page.project %}
+      {% assign proj = site.projects | where: "slug", page.project | first %}
+      {% if proj %} · <a href="{{ proj.url | relative_url }}">{{ proj.title }}</a>{% endif %}
+    {% endif %}
+  </p>
+  <h1>{{ page.title }}</h1>
+  <div class="prose">{{ content }}</div>
+  <p class="back"><a href="{{ '/log/' | relative_url }}">← All build log entries</a></p>
+</article>

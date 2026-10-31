@@ -1,0 +1,18 @@
+---
+layout: default
+title: Projects
+permalink: /projects/
+---
+<h1>Projects</h1>
+<p class="lead">Things I've designed and built, including what went wrong along the way.</p>
+<div class="cards">
+  {% assign projects = site.projects | sort: "order" %}
+  {% for p in projects %}
+  <a class="card" href="{{ p.url | relative_url }}">
+    {% if p.cover %}<img src="{{ p.cover | relative_url }}" alt="">{% endif %}
+    <span class="badge">{{ p.status }}</span>
+    <h3>{{ p.title }}</h3>
+    <p>{{ p.summary }}</p>
+  </a>
+  {% endfor %}
+</div>

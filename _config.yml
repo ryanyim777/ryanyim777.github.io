@@ -1,0 +1,41 @@
+# ---------------------------------------------------------------
+#  Site settings — edit these first!
+# ---------------------------------------------------------------
+title: "Ryan Yim"
+tagline: "Aspiring engineer. I build things, break them, and write down what I learn."
+author: "Ryan Yim"
+email: "ryanyim5911@gmail.com"
+github_username: "ryanyim777"
+school: "Centennial High School, Frisco, TX"
+class_of: "2030"
+
+# If the repo is named <username>.github.io, leave baseurl empty.
+# Otherwise set it to "/<repo-name>".
+url: "https://ryanyim777.github.io"
+baseurl: ""
+
+# ---------------------------------------------------------------
+#  Build settings (no need to touch)
+# ---------------------------------------------------------------
+markdown: kramdown
+permalink: /log/:year/:month/:day/:title/
+timezone: America/Chicago
+
+collections:
+  projects:
+    output: true
+    permalink: /projects/:name/
+
+defaults:
+  - scope: { path: "", type: posts }
+    values: { layout: post }
+  - scope: { path: "", type: projects }
+    values: { layout: project }
+  - scope: { path: "" }
+    values: { layout: default }
+
+exclude:
+  - README.md
+  - templates/
+  - Gemfile
+  - Gemfile.lock

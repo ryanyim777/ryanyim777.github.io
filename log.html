@@ -1,0 +1,12 @@
+---
+layout: default
+title: Build Log
+permalink: /log/
+---
+<h1>Build Log</h1>
+<p class="lead">Short, honest notes from the workbench: progress, failures, and fixes.</p>
+<ul class="post-list">
+  {% for post in site.posts %}
+  <li><time>{{ post.date | date: "%b %-d, %Y" }}</time><a href="{{ post.url | relative_url }}">{{ post.title }}</a></li>
+  {% endfor %}
+</ul>
