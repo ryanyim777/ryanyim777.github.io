@@ -1,0 +1,30 @@
+---
+layout: default
+---
+<article class="project">
+  <p class="eyebrow">Project · {{ page.timeline }}</p>
+  <h1>{{ page.title }}</h1>
+  <p class="lead">{{ page.summary }}</p>
+
+  <ul class="facts">
+    <li><span>Status</span>{{ page.status }}</li>
+    {% if page.skills %}<li><span>Skills</span>{{ page.skills | join: " · " }}</li>{% endif %}
+    {% if page.code %}<li><span>Code</span><a href="{{ page.code }}">GitHub repo</a></li>{% endif %}
+  </ul>
+
+  {% if page.cover %}<img class="cover" src="{{ page.cover | relative_url }}" alt="{{ page.title }}">{% endif %}
+
+  <div class="prose">{{ content }}</div>
+
+  {% assign related = site.posts | where: "project", page.slug %}
+  {% if related.size > 0 %}
+  <section class="related">
+    <h2>Build log for this project</h2>
+    <ul class="post-list">
+      {% for post in related reversed %}
+      <li><time>{{ post.date | date: "%b %-d, %Y" }}</time><a href="{{ post.url | relative_url }}">{{ post.title }}</a></li>
+      {% endfor %}
+    </ul>
+  </section>
+  {% endif %}
+</article>

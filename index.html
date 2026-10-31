@@ -1,0 +1,29 @@
+---
+layout: default
+---
+<section class="hero">
+  <p class="eyebrow">{{ site.school }} · Class of {{ site.class_of }}</p>
+  <h1>Hi, I'm {{ site.author }}.</h1>
+  <p class="lead">{{ site.tagline }}</p>
+</section>
+
+<h2>Projects</h2>
+<div class="cards">
+  {% assign projects = site.projects | sort: "order" %}
+  {% for p in projects %}
+  <a class="card" href="{{ p.url | relative_url }}">
+    {% if p.cover %}<img src="{{ p.cover | relative_url }}" alt="">{% endif %}
+    <span class="badge">{{ p.status }}</span>
+    <h3>{{ p.title }}</h3>
+    <p>{{ p.summary }}</p>
+  </a>
+  {% endfor %}
+</div>
+
+<h2>Latest from the build log</h2>
+<ul class="post-list">
+  {% for post in site.posts limit: 5 %}
+  <li><time>{{ post.date | date: "%b %-d, %Y" }}</time><a href="{{ post.url | relative_url }}">{{ post.title }}</a></li>
+  {% endfor %}
+</ul>
+<p><a href="{{ '/log/' | relative_url }}">See all entries →</a></p>
