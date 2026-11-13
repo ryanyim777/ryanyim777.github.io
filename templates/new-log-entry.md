@@ -1,18 +1,24 @@
 ---
 title: "Short title of what happened"
-project: ping-pong-feeder   # slug of the related project file, or delete this line
+project: safelygo   # slug of the related project file (e.g. safelygo, ping-pong-feeder), or delete this line
 ---
 
 <!--
-  HOW TO USE: copy this file into _posts/ and rename it
-  YYYY-MM-DD-short-title.md   (e.g. 2026-11-08-first-jam.md)
-  5–10 lines + 1–2 photos is perfect. Don't overthink it.
+  HOW TO USE: copy this into _posts/ as YYYY-MM-DD-short-title.md
+  Write it from that week's private notes. 5–10 lines + 1–2 photos is the minimum, longer is fine.
+  Skip any section that doesn't fit. Run the privacy check in README.md before posting.
 -->
 
 **What I did:**
 
 **What went wrong / what surprised me:**
 
+**What I learned:**
+
 **What I measured (if anything):**
 
+**How it felt:**
+
 **Next step:**
+
+<!-- ![What the photo shows](/assets/images/<project>/photo-name.png) -->

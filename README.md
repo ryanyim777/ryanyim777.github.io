@@ -1,48 +1,98 @@
-# My engineering portfolio
+# My engineering portfolio & build journal
 
-A Jekyll site hosted free on GitHub Pages. No installs are needed to update it:
-you can edit everything right on github.com.
+A Jekyll site hosted free on GitHub Pages. It's two things at once:
+
+- a **portfolio**: what I've designed and built, including what went wrong, and
+- a **journal**: an honest record of what I learned and how I felt along the way, kept for years.
+
+**Rule #1: everything in this folder is public.** Drafts and private thoughts live in my
+private notes folder, not here. Only finished, checked writing gets copied in.
+
+## Where things live
+
+| Place | Language | What | Public? |
+|---|---|---|---|
+| `C:\dev\ryanyim777.github.io\` (this repo) | English | Finished posts and project pages | ✅ Yes |
+| `C:\dev\portfolio-notes\` | Korean (+ English drafts) | Daily study notes, drafts, private thoughts | ❌ No |
+| `C:\dev\<project>\` | — | Each project's own code (e.g. `C:\dev\safelygo\`) | Depends |
+
+The old unzipped copy in Documents is only a backup from Oct 31. Don't edit it; this clone is the real one.
 
 ## Folder map
 
 | Folder / file | What it is |
 |---|---|
-| `_config.yml` | Your name, email, school. **Edit this first.** |
-| `_projects/` | One file per project (the polished summary pages) |
-| `_posts/` | Build log entries (short notes, newest shows first) |
+| `_config.yml` | Site title, tagline, links |
+| `_projects/` | One file per project (the polished summary page) |
+| `_posts/` | Journal / build log entries (newest shows first) |
 | `about.md` | About page |
-| `assets/images/` | Photos (make one folder per project) |
-| `templates/` | Copy-and-paste starters for new posts and projects |
+| `assets/images/<project>/` | Photos, one folder per project (`assets/images/journal/` for non-project posts) |
+| `templates/` | Starters: `new-log-entry.md`, `new-reflection.md`, `new-project.md` |
 
-## Everyday workflow
+## The writing flow
 
-**New build log entry (aim for once a week):**
-1. Copy `templates/new-log-entry.md`.
-2. Create `_posts/YYYY-MM-DD-short-title.md` (example: `2026-11-08-first-jam.md`).
-   Posts dated in the future won't show up.
-3. Fill in 5–10 lines and add a photo.
+```
+Every work day (10 min, Korean, private)
+  → C:\dev\portfolio-notes\<project>\notes\YYYY-MM-DD-....md
+      what I did, what broke, what I learned, how I felt
 
-**Adding a photo:**
-1. Upload it to `assets/images/<project>/` (shrink it first; under 500 KB is ideal).
-2. In your post: `![What the photo shows](/assets/images/feeder/photo-name.jpg)`
+About once a week (English, public)
+  → pick the best parts of that week's notes
+  → write the English post myself (draft in portfolio-notes\<project>\drafts\)
+  → privacy check → copy into _posts/ → commit → push
 
-**Finished a milestone?** Update the matching page in `_projects/`.
+At each milestone
+  → update _projects/<project>.md (status, goals table, what went wrong, results)
+```
+
+"Once a week, 5–10 lines" is the **minimum**, not a limit. Long posts are fine when I have a lot to say.
+
+## Posting step by step
+
+1. Copy a template:
+   - project progress → `templates/new-log-entry.md`
+   - anything else (competition recap, year in review, a book, a thought) → `templates/new-reflection.md`
+2. Save it as `_posts/YYYY-MM-DD-short-title.md` (lowercase English + hyphens; future dates won't show).
+   Use the date the work **started** (a late-night session that crosses midnight keeps the first date).
+3. Add photos to `assets/images/<project>/` (shrink to under ~500 KB first).
+   In the post: `![What the photo shows](/assets/images/safelygo/sos-button.png)`
+4. Run the privacy check below.
+5. Commit and push:
+   ```bash
+   git add .
+   git commit -m "Add post: short title"
+   git push
+   ```
+   The site updates about a minute later.
+
+## Privacy check (every post, every photo)
+
+Ask: **"Would I be fine with a stranger reading this ten years from now?"** Then check:
+
+- [ ] No home address, phone number, email, or detailed schedule
+- [ ] No real school name or city (my apps use a fictional school, "Sunnyvale High")
+- [ ] No other people's names or photos without their OK
+- [ ] No keys, passwords, project IDs, or member IDs (blur them in screenshots)
+- [ ] Map screenshots use fake test locations only
+
+Public journal vs. private notes:
+
+| Goes here (public) | Stays in private notes |
+|---|---|
+| What I built, learned, broke, fixed | Unsorted thoughts and worries |
+| How it felt ("I was frustrated", "this was so cool") | Stories about friends, family, teachers |
+| Rough timing ("this fall") | Exact places, dates, contacts |
 
 ## Writing tips
 
-- Write like you're explaining to a smart friend, in your own voice.
-- **Failures are the best content.** Say what broke, why, and what you changed.
-- Use numbers whenever you can: "jams dropped from 7/10 to 2/10."
-- If you followed a tutorial, link it and explain what *you* did differently.
-- Never post your home address, phone number, or detailed schedule.
+- **Write it myself, in my own voice.** Grammar mistakes are fine; my English growing over the years is part of the story.
+  If I ask AI for help, ask it to *point out* awkward parts, not rewrite them.
+- **Be honest about tools.** If I used AI (e.g. Claude Code as a pair programmer), say so and say what *I* decided.
+- **Failures are the best content.** Say what broke, why, and what I changed.
+- Use numbers whenever I can: "load time dropped from 4 s to 1 s."
+- If I followed a tutorial, link it and explain what I did differently.
 
-## Publish (one-time setup)
-
-1. Create a repo named **`<your-github-id>.github.io`** and upload these files.
-2. Go to **Settings → Pages** → Source: *Deploy from a branch* → `main` / `(root)`.
-3. Wait about a minute, then visit `https://<your-github-id>.github.io`.
-
-## Preview on your computer (optional)
+## Preview on my computer (optional)
 
 ```bash
 gem install jekyll
