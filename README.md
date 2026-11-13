@@ -85,8 +85,8 @@ Public journal vs. private notes:
 
 ## Writing tips
 
-- **Write it myself, in my own voice.** Grammar mistakes are fine; my English growing over the years is part of the story.
-  If I ask AI for help, ask it to *point out* awkward parts, not rewrite them.
+- **Make it sound like me.** Claude drafts posts from my notes; I read every draft out loud and change anything
+  that doesn't sound like me before posting. Only real facts and my real feelings go in.
 - **Be honest about tools.** If I used AI (e.g. Claude Code as a pair programmer), say so and say what *I* decided.
 - **Failures are the best content.** Say what broke, why, and what I changed.
 - Use numbers whenever I can: "load time dropped from 4 s to 1 s."

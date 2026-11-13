@@ -10,6 +10,7 @@ This repo is public, and so is this file. Keep it free of private details.
 Rules:
 1. Everything committed here is public. Drafts stay in `C:\dev\portfolio-notes\<project>\drafts\`.
 2. **Never push without asking Ryan first.** Pushing publishes the site.
-3. Posts are in Ryan's own voice. Don't write or rewrite them; point out awkward parts and let him fix them.
+3. Claude writes English drafts by default (in `C:\dev\portfolio-notes\<project>\drafts\`), in simple first-person English
+   that sounds like Ryan, using only real facts from his notes. Ryan reviews and edits before anything is posted.
 4. Run the README privacy check before every commit (no real email, address, school, city, keys/IDs, other people's names).
 5. Posts link to projects with `project: <slug>` in front matter; non-project posts omit it.
