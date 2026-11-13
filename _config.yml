@@ -1,11 +1,11 @@
 # ---------------------------------------------------------------
 #  Site settings — edit these first!
 # ---------------------------------------------------------------
-title: "Ryan Yim"
+title: "Ryan"
 tagline: "Aspiring engineer. I build things, break them, and write down what I learn."
-author: "Ryan Yim"
+author: "Ryan"
 github_username: "ryanyim777"
-school: "Centennial High School, Frisco, TX"
+school: "High school student"
 class_of: "2030"
 
 # If the repo is named <username>.github.io, leave baseurl empty.

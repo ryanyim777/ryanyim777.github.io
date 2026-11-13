@@ -7,7 +7,7 @@ permalink: /about/
 
 <!-- TODO: Write this in your own words. 3–5 short paragraphs is plenty. -->
 
-I'm a student at Centennial High School in Frisco, Texas, interested in
+I'm a high school student interested in
 **[TODO: e.g., electrical / mechanical / biomedical engineering]**.
 
 **What got me into building things:** TODO, a short story. (What was the first thing you took apart or made?)
