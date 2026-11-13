@@ -16,15 +16,25 @@ layout: default
 
   <div class="prose">{{ content }}</div>
 
-  {% assign related = site.posts | where: "project", page.slug %}
+  {% comment %}
+    All posts with `project: <this project's slug>`, oldest first,
+    grouped by their `topic:` (posts without a topic go under "Other").
+  {% endcomment %}
+  {% assign related = site.posts | where: "project", page.slug | reverse %}
   {% if related.size > 0 %}
+  {% assign groups = related | group_by: "topic" %}
   <section class="related">
     <h2>Build log for this project</h2>
-    <ul class="post-list">
-      {% for post in related reversed %}
-      <li><time>{{ post.date | date: "%b %-d, %Y" }}</time><a href="{{ post.url | relative_url }}">{{ post.title }}</a></li>
-      {% endfor %}
-    </ul>
+    {% for group in groups %}
+      {% if groups.size > 1 or group.name != "" %}
+      <h3 class="topic">{% if group.name == "" %}Other{% else %}{{ group.name }}{% endif %}</h3>
+      {% endif %}
+      <ul class="post-list">
+        {% for post in group.items %}
+        <li><time>{{ post.date | date: "%b %-d, %Y" }}</time><a href="{{ post.url | relative_url }}">{{ post.title }}</a></li>
+        {% endfor %}
+      </ul>
+    {% endfor %}
   </section>
   {% endif %}
 </article>

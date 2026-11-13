@@ -1,0 +1,12 @@
+{
+  // Settings for editing blog posts in VS Code (folder-only, not used by the site)
+  "[markdown]": {
+    "editor.wordWrap": "on",
+    "editor.quickSuggestions": { "other": "off", "comments": "off", "strings": "off" },
+    "files.trimTrailingWhitespace": false
+  },
+  "files.associations": { "*.html": "html" },
+  "markdown.preview.breaks": true,
+  "cSpell.language": "en",
+  "cSpell.words": ["SafelyGo", "Supabase", "Expo", "Jekyll", "Sunnyvale", "camelCase", "localhost"]
+}

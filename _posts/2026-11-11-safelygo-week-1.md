@@ -1,6 +1,7 @@
 ---
 title: "SafelyGo, Week 1: an SOS button, a database, and a bug I had to prove"
 project: safelygo
+topic: Weekly log
 ---
 
 **What I did:**

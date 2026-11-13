@@ -13,4 +13,5 @@ Rules:
 3. Claude writes English drafts by default (in `C:\dev\portfolio-notes\<project>\drafts\`), in simple first-person English
    that sounds like Ryan, using only real facts from his notes. Ryan reviews and edits before anything is posted.
 4. Run the README privacy check before every commit (no real email, address, school, city, keys/IDs, other people's names).
-5. Posts link to projects with `project: <slug>` in front matter; non-project posts omit it.
+5. Posts link to projects with `project: <slug>` and are grouped by `topic: <Name>` on the project page; non-project posts omit both.
+6. Ryan edits posts himself in VS Code. Always `git pull` before editing, and when reviewing, check privacy, links, and that image paths start with `/assets/`.

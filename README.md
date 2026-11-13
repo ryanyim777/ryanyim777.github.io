@@ -37,15 +37,51 @@ Every work day (10 min, Korean, private)
       what I did, what broke, what I learned, how I felt
 
 About once a week (English, public)
-  → pick the best parts of that week's notes
-  → write the English post myself (draft in portfolio-notes\<project>\drafts\)
-  → privacy check → copy into _posts/ → commit → push
+  → Claude drafts the post(s) from that week's notes: structure + text + <!-- comments -->
+  → I edit it myself in VS Code (wording, photos)
+  → I ask Claude to review (privacy, broken links, image paths)
+  → commit → push (me in VS Code, or Claude when I ask)
 
 At each milestone
   → update _projects/<project>.md (status, goals table, what went wrong, results)
 ```
 
 "Once a week, 5–10 lines" is the **minimum**, not a limit. Long posts are fine when I have a lot to say.
+
+## One project, many posts
+
+The project page (`_projects/<project>.md`) is the **short summary / cover page**. The details live in posts.
+Any post with `project: <slug>` is listed automatically under "Build log for this project",
+grouped by its `topic:` (oldest first inside each group; posts without a topic go under "Other").
+
+```yaml
+---
+title: "How I protected the admin role"
+project: safelygo
+topic: Security        # Weekly log / Design / Security / Debugging / Testing / Results ...
+---
+```
+
+Split however it reads best: by date ("Week 2") or one idea per post ("The localhost bug").
+Reuse the same topic names so the groups stay tidy.
+
+## Editing posts myself (VS Code)
+
+1. VS Code → **File → Open Folder** → `C:\dev\ryanyim777.github.io`
+   (install the recommended spell checker when VS Code asks).
+2. Posts are in `_posts/`, project pages in `_projects/`. Edit them like any document.
+3. `Ctrl + Shift + V` opens a preview (plain style, not the site design, but shows text, tables, and images).
+4. `<!-- ... -->` is a hidden comment. It never shows on the site. Claude uses these for notes like "screenshot here".
+5. **Photos:** put the file in `assets/images/<project>/` (under ~500 KB), then add one line where it should appear:
+   ```markdown
+   ![SOS button on the home screen](/assets/images/safelygo/sos-home.png)
+   ```
+   The path **must start with `/assets/`**. Relative paths break because post URLs are deep (`/log/2026/11/11/...`).
+6. **Publish:** Source Control (left sidebar) → write a message → **Commit** → **Sync Changes**. The site updates in 1–2 minutes.
+   If the site still looks old, press `Ctrl + F5` (the browser cached the old page).
+
+Quick fixes on github.com (pencil ✏️ icon) are fine too, but then **Pull / Sync in VS Code first** next time,
+so my PC copy isn't behind.
 
 ## Posting step by step
 

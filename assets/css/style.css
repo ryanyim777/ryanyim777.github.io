@@ -76,6 +76,7 @@ h3 { font-size: 18px; margin: 28px 0 8px; }
 .facts span { display: inline-block; min-width: 70px; color: var(--muted); }
 .cover { margin: 8px 0 24px; }
 .related { margin-top: 48px; }
+.related .topic { font-size: 15px; text-transform: uppercase; letter-spacing: 0.06em; color: var(--muted); margin: 24px 0 4px; }
 .back { margin-top: 40px; }
 
 @media (max-width: 520px) {
