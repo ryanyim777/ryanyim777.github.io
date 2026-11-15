@@ -100,3 +100,9 @@ This post is about **why** I changed it. The next post is about how I built and 
 - Colors have meaning. If red is everywhere, it stops meaning "emergency."
 - Changing direction didn't mean starting over. About 80% of what I built (links, location sharing,
   erasing location at the end, the live map, real-time updates) is still used.
+
+**How it felt:**
+When I decided to change the plan, it felt like all my work so far had been for nothing.
+But I believed the new direction was right, so I couldn't just stick with the old one.
+Changing the plan was something I couldn't avoid. Still, the change itself was really stressful.
+It was the right direction, but it was hard.
