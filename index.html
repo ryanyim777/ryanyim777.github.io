@@ -7,6 +7,17 @@ layout: default
   <p class="lead">{{ site.tagline }}</p>
 </section>
 
+{% comment %} The build log comes first: it's what changes most often. {% endcomment %}
+<h2>Latest from the build log</h2>
+<ul class="post-list">
+  {% for post in site.posts limit: 5 %}
+  {% assign proj = nil %}
+  {% if post.project %}{% assign proj = site.projects | where: "slug", post.project | first %}{% endif %}
+  <li><time>{{ post.date | date: "%b %-d, %Y" }}</time><a href="{{ post.url | relative_url }}">{{ post.title }}</a>{% if proj %}<span class="badge">{{ proj.title }}</span>{% endif %}</li>
+  {% endfor %}
+</ul>
+<p><a href="{{ '/log/' | relative_url }}">See all entries →</a></p>
+
 <h2>Projects</h2>
 <div class="cards">
   {% assign projects = site.projects | sort: "order" %}
@@ -19,11 +30,3 @@ layout: default
   </a>
   {% endfor %}
 </div>
-
-<h2>Latest from the build log</h2>
-<ul class="post-list">
-  {% for post in site.posts limit: 5 %}
-  <li><time>{{ post.date | date: "%b %-d, %Y" }}</time><a href="{{ post.url | relative_url }}">{{ post.title }}</a></li>
-  {% endfor %}
-</ul>
-<p><a href="{{ '/log/' | relative_url }}">See all entries →</a></p>

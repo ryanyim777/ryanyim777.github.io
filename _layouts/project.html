@@ -12,29 +12,30 @@ layout: default
     {% if page.code %}<li><span>Code</span><a href="{{ page.code }}">GitHub repo</a></li>{% endif %}
   </ul>
 
-  {% if page.cover %}<img class="cover" src="{{ page.cover | relative_url }}" alt="{{ page.title }}">{% endif %}
-
-  <div class="prose">{{ content }}</div>
-
   {% comment %}
-    All posts with `project: <this project's slug>`, oldest first,
-    grouped by their `topic:` (posts without a topic go under "Other").
+    The build log comes FIRST (it's the heart of the blog): every post with
+    `project: <this project's slug>`, newest first, with its topic as a badge.
+    The longer project description sits below under "About this project".
   {% endcomment %}
-  {% assign related = site.posts | where: "project", page.slug | reverse %}
-  {% if related.size > 0 %}
-  {% assign groups = related | group_by: "topic" %}
-  <section class="related">
-    <h2>Build log for this project</h2>
-    {% for group in groups %}
-      {% if groups.size > 1 or group.name != "" %}
-      <h3 class="topic">{% if group.name == "" %}Other{% else %}{{ group.name }}{% endif %}</h3>
-      {% endif %}
-      <ul class="post-list">
-        {% for post in group.items %}
-        <li><time>{{ post.date | date: "%b %-d, %Y" }}</time><a href="{{ post.url | relative_url }}">{{ post.title }}</a></li>
-        {% endfor %}
-      </ul>
-    {% endfor %}
+  {% assign related = site.posts | where: "project", page.slug %}
+  <section class="project-log" id="build-log">
+    <h2>Build log</h2>
+    {% if related.size > 0 %}
+    <ul class="post-list">
+      {% for post in related %}
+      <li><time>{{ post.date | date: "%b %-d, %Y" }}</time><a href="{{ post.url | relative_url }}">{{ post.title }}</a>{% if post.topic %}<span class="badge">{{ post.topic }}</span>{% endif %}</li>
+      {% endfor %}
+    </ul>
+    {% else %}
+    <p class="muted">No entries yet.</p>
+    {% endif %}
+    <p class="jump"><a href="#about">About this project ↓</a></p>
   </section>
-  {% endif %}
+
+  <section class="project-about" id="about">
+    <h2>About this project</h2>
+    {% if page.cover %}<img class="cover" src="{{ page.cover | relative_url }}" alt="{{ page.title }}">{% endif %}
+    <div class="prose">{{ content }}</div>
+    <p class="jump"><a href="#build-log">↑ Back to the build log</a></p>
+  </section>
 </article>

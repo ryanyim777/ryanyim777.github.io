@@ -1,15 +1,46 @@
 ---
 layout: default
 ---
+{% if page.project %}
+  {% assign proj = site.projects | where: "slug", page.project | first %}
+{% endif %}
 <article class="post">
   <p class="eyebrow"><time>{{ page.date | date: "%B %-d, %Y" }}</time>
-    {% if page.project %}
-      {% assign proj = site.projects | where: "slug", page.project | first %}
-      {% if proj %} · <a href="{{ proj.url | relative_url }}">{{ proj.title }}</a>{% endif %}
-    {% endif %}
+    {% if proj %} · <a href="{{ proj.url | relative_url }}">{{ proj.title }}</a>{% endif %}
     {% if page.topic %} · {{ page.topic }}{% endif %}
   </p>
   <h1>{{ page.title }}</h1>
   <div class="prose">{{ content }}</div>
-  <p class="back"><a href="{{ '/log/' | relative_url }}">← All build log entries</a></p>
+
+  {% comment %}
+    Previous / next entry. For a project post, stay inside the same project
+    (like turning pages in that project's book). Otherwise use all posts.
+    site.posts is newest first, so "older" is the next item in the list.
+  {% endcomment %}
+  {% if proj %}
+    {% assign same = site.posts | where: "project", page.project %}
+    {% assign idx = 0 %}
+    {% for p in same %}{% if p.url == page.url %}{% assign idx = forloop.index0 %}{% endif %}{% endfor %}
+    {% assign older_i = idx | plus: 1 %}
+    {% assign older = same[older_i] %}
+    {% assign newer = nil %}
+    {% if idx > 0 %}{% assign newer_i = idx | minus: 1 %}{% assign newer = same[newer_i] %}{% endif %}
+    {% capture up_url %}{{ proj.url | relative_url }}#build-log{% endcapture %}
+    {% assign up_label = proj.title | prepend: "All " | append: " entries" %}
+  {% else %}
+    {% assign older = page.previous %}
+    {% assign newer = page.next %}
+    {% capture up_url %}{{ '/log/' | relative_url }}{% endcapture %}
+    {% assign up_label = "All build log entries" %}
+  {% endif %}
+
+  <div class="post-nav">
+    <div class="post-nav-side">
+      {% if older %}<a href="{{ older.url | relative_url }}"><span>← Previous</span>{{ older.title }}</a>{% endif %}
+    </div>
+    <div class="post-nav-up"><a href="{{ up_url }}">{{ up_label }}</a></div>
+    <div class="post-nav-side post-nav-next">
+      {% if newer %}<a href="{{ newer.url | relative_url }}"><span>Next →</span>{{ newer.title }}</a>{% endif %}
+    </div>
+  </div>
 </article>
