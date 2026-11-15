@@ -15,7 +15,9 @@ with its status (Sent → In review → Resolved).
 I kept it to three categories on purpose. When something is happening, choosing should be fast.
 If someone is in danger right now, the screen points them to the red SOS button instead.
 
-<!-- ![The Report tab with three category tiles and My reports](/assets/images/safelygo/report-tab.png) -->
+<img class="phone-shot" src="/assets/images/safelygo/report-tab-before.webp" alt="The Report tab with three colored category tiles and one report under My reports.">
+
+*This is the first version. Later the same day I changed the design. See the next post.*
 
 **Location, but only when it's needed:**
 - The app asks for location only "while using the app," never in the background.

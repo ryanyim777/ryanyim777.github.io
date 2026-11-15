@@ -13,7 +13,7 @@ I didn't write the phone numbers inside the app's code.
 I put them in my database instead, so a school admin can change a number without updating the app.
 Then I wrote SQL rules so that every logged-in student can read the list, but only an admin can change it.
 
-<!-- ![The Contacts tab with Emergency, School, and Support sections](/assets/images/safelygo/contacts-tab.png) -->
+<img class="phone-shot" src="/assets/images/safelygo/contacts-tab.webp" alt="The Contacts tab: Emergency, School, and Support sections with Call buttons. A demo-mode message shows after tapping 911.">
 
 **The SQL, step by step:**
 

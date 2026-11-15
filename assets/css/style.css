@@ -112,3 +112,10 @@ h3 { font-size: 18px; margin: 28px 0 8px; }
   .post-nav-up, .post-nav-next { text-align: left; }
   .post-nav-up { order: 3; }
 }
+
+/* Phone screenshots in posts */
+.phone-shot { display: block; max-width: 300px; margin: 16px auto; border: 1px solid var(--line); }
+.shots { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 16px 0; }
+.shots figure { margin: 0; text-align: center; }
+.shots img { border: 1px solid var(--line); }
+.shots figcaption { color: var(--muted); font-size: 14px; margin-top: 6px; }

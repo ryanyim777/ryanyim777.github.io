@@ -13,7 +13,16 @@ They want something that looks calm and trustworthy, like it really goes to camp
 
 So I changed the direction to "friendly but serious."
 
-<!-- ![Report screen before and after the redesign](/assets/images/safelygo/report-before-after.png) -->
+<div class="shots">
+  <figure>
+    <img src="/assets/images/safelygo/report-tab-before.webp" alt="Before: cream background, a cat emoji, and big pastel tiles for each report type.">
+    <figcaption>Before</figcaption>
+  </figure>
+  <figure>
+    <img src="/assets/images/safelygo/report-tab-after.webp" alt="After: a navy header, white cards with small colored icons, and a red SOS reminder.">
+    <figcaption>After</figcaption>
+  </figure>
+</div>
 
 **What changed:**
 
