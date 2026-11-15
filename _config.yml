@@ -19,6 +19,9 @@ baseurl: ""
 markdown: kramdown
 permalink: /log/:year/:month/:day/:title/
 timezone: America/Chicago
+# Show posts dated "today" right away, even if it is still yesterday in Chicago
+# (Ryan's computer clock can be ahead of Chicago time).
+future: true
 
 collections:
   projects:

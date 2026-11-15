@@ -5,8 +5,35 @@ permalink: /log/
 ---
 <h1>Build Log</h1>
 <p class="lead">Honest notes from the workbench and beyond: progress, failures, fixes, and what I learned along the way.</p>
-<ul class="post-list">
-  {% for post in site.posts %}
-  <li><time>{{ post.date | date: "%b %-d, %Y" }}</time><a href="{{ post.url | relative_url }}">{{ post.title }}</a></li>
-  {% endfor %}
-</ul>
+
+{% comment %}
+  One section per project (in the same order as the Projects page),
+  newest entry first. Projects with no entries yet are skipped.
+  Posts without `project:` go under "Journal" at the end.
+{% endcomment %}
+{% assign projects = site.projects | sort: "order" %}
+{% for p in projects %}
+  {% assign entries = site.posts | where: "project", p.slug %}
+  {% if entries.size > 0 %}
+  <section class="log-project">
+    <h2><a href="{{ p.url | relative_url }}">{{ p.title }}</a></h2>
+    <ul class="post-list">
+      {% for post in entries %}
+      <li><time>{{ post.date | date: "%b %-d, %Y" }}</time><a href="{{ post.url | relative_url }}">{{ post.title }}</a>{% if post.topic %}<span class="badge">{{ post.topic }}</span>{% endif %}</li>
+      {% endfor %}
+    </ul>
+  </section>
+  {% endif %}
+{% endfor %}
+
+{% assign journal = site.posts | where_exp: "post", "post.project == nil" %}
+{% if journal.size > 0 %}
+<section class="log-project">
+  <h2>Journal</h2>
+  <ul class="post-list">
+    {% for post in journal %}
+    <li><time>{{ post.date | date: "%b %-d, %Y" }}</time><a href="{{ post.url | relative_url }}">{{ post.title }}</a></li>
+    {% endfor %}
+  </ul>
+</section>
+{% endif %}
