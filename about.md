@@ -33,4 +33,4 @@ I'm a high school student interested in
 
 ## Contact
 
-The best way to reach me is email: [{{ site.email }}](mailto:{{ site.email }}).
+The best way to reach me is through [GitHub](https://github.com/{{ site.github_username }}).
