@@ -1,6 +1,6 @@
 ---
 title: "SafelyGo: Building my first Android app file (APK), and finding a crash with adb"
-date: 2026-11-23 00:30:00 -0600
+date: 2026-11-22 23:59:00 -0600
 project: safelygo
 topic: Debugging
 ---
