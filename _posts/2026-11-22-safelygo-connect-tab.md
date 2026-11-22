@@ -36,7 +36,7 @@ Here's a mistake I made twice: my two test phones showed *different* cards, beca
 people connected and the other had none. I explained the reason, but the screens still looked
 different. Explaining it isn't the same as fixing it. So now the card has the **same shape in every
 state**: a sentence, the button, and one short line under it.
-- With people: "Goes to your 2 people"
+- With people: "You have 2 people connected"
 - Without people: "First, add your family and friends in the People tab."
 
 At first I showed people's names there, but more people or longer names would make the line wrap.
