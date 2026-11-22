@@ -6,7 +6,7 @@ topic: Check on me
 ---
 
 **Where I started today:**
-In my [last post](/log/2026/11/15/safelygo-check-on-me/), Check on me could share your location
+In my [last post](/log/2026/11/16/safelygo-check-on-me-part2/), Check on me could share your location
 with the people you picked, and they could answer "I'm here" when you asked "Are you there?".
 It worked on both phones. But when I looked at the screens again, a few things bothered me:
 
